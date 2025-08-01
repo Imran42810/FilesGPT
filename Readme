@@ -1,139 +1,126 @@
-# FileChat — AI File Chat Application Prompt 🚀
+# FilesGPT — AI File Chat Application Prompt 🚀
 
-🔗 **Project Playground:** [Try the live demo](https://filesgptaii.lovable.app/)
+<div align="center">
+  <a href="https://filesgptaii.lovable.app/">🔗 **Project Playground**</a>
+</div>
 
-Welcome to **FilesGPT**, your all-in-one solution to upload, manage, and chat with your files using cutting-edge AI. Below is the complete project prompt you can use to scaffold and build the system. No code files are included—just the prompt that outlines the entire architecture and feature set.
+Welcome to **FilesGPT**, your all-in-one platform to upload, manage, and chat with your files using cutting-edge AI. Below is the comprehensive project prompt to scaffold and build the system—no code or assets included.
 
 ---
 
 ## 📢 Project Prompt
-**Project Name & Purpose**
 
-- **FileGPT**: A web application where users can upload, manage, and chat with their files in one seamless interface.
+### Project Name & Purpose
+- **FilesGPT**: A web application where users can upload, organize, and chat with their files in one seamless interface.
 
-**Hero Section**
-
-- **Layout & Branding:**
-  - Top-left: “FileChat” logo text (clean, bold sans-serif).
-  - Top-right: Coral (#FF6F61) “Sign Up” button → navigates to Auth panel.
-- **Main Heading:** “Transform the Way You Interact with Your Files”
-  - Font: Montserrat/Poppins, weight 700, color #333333. Emphasize “Interact” in Coral (#FF6F61).
-- **Subheading:** “Upload, manage, and chat with your files in a seamless, intuitive environment.”
-  - Font: Roboto/Open Sans, weight 400, color #333333.
-- **Illustration/Play Icon:**
-  - Centered circular play-button overlay on soft gradient circle (light coral to light blue halos).
-  - Hover: scale up & reduce overlay opacity.
-- **Primary CTA:** “Get Started →” button
-  - Background: Accent Blue (#2D9CDB), text white (Montserrat 500).
-  - Hover: lighten by 10%, click → Auth page.
+### Hero Section
+- **Layout & Branding**
+  - **Logo:** Top-left “FilesGPT” (clean, bold sans‑serif).  
+  - **Sign Up Button:** Top-right coral `#FF6F61` → navigates to Auth.
+- **Main Heading:**
+  <h1 style="font-family:'Montserrat', sans-serif; font-weight:700; color:#333333; text-align:center;">
+    Transform the Way You <span style="color:#FF6F61;">Interact</span> with Your Files
+  </h1>
+- **Subheading:**<br>
+  <p style="font-family:'Roboto', sans-serif; font-weight:400; color:#333333; text-align:center;">
+    Upload, manage, and chat with your files in a seamless, intuitive environment.
+  </p>
+- **Illustration / Play Icon**
+  - Centered circular play-button overlay on a soft gradient (light coral → light blue).
+  - Hover effect: scale-up + lower overlay opacity.
+- **Primary CTA:**
+  <button style="background:#2D9CDB; color:#FFF; font-family:'Montserrat'; font-weight:500; padding:0.75rem 1.5rem; border-radius:0.5rem;">Get Started →</button>
+  <br>Hover: lighten 10%; click → Auth page.
 - **Colors & Background:**
-  - Page bg: Light Gray (#F7F7F7).
-  - Hero bg: subtle diagonal gradient from #F7F7F7 to very light coral hue.
+  - Page background: `#F7F7F7`.  
+  - Hero background: diagonal gradient (`#F7F7F7` → light coral).
 
-**Authentication Flow** (Single-Page, Tabbed)
-
-- **UI Structure:** Centered card with two tabs: “Sign Up” | “Sign In.”
-- **Form Fields:** Email (real-time format validation), Password (strength meter on Sign Up).
-- **Action Buttons:** Sign Up = Coral “Create Account”; Sign In = Coral “Continue.”
+### Authentication Flow (Single‑Page, Tabbed)
+- Centered card with tabs: **Sign Up** | **Sign In**.
+- **Fields:** Email (real-time validation), Password (strength meter on Sign Up).
+- **Actions:** Sign Up → coral `Create Account`; Sign In → coral `Continue`.
 - **Toggle Links:**
-  - Under Sign In: “Don’t have an account? Sign Up”
-  - Under Sign Up: “Already have an account? Sign In”
-- **Behavior:**
-  - Successful submit → redirect to main dashboard.
-  - Inline error messages for invalid/missing fields.
+  - Sign In view: “Don’t have an account? Sign Up”
+  - Sign Up view: “Already have an account? Sign In”
+- Inline errors; on success → dashboard.
 
-**Accessibility & Responsiveness**
+### Accessibility & Responsiveness
+- Keyboard navigable with visible focus states.
+- ARIA labels on controls.
+- Breakpoints: mobile ≤640px, tablet 641–1024px, desktop ≥1025px.
 
-- Keyboard-navigable elements with visible focus states.
-- ARIA labels on inputs/buttons.
-- Breakpoints: mobile (≤640px), tablet (641–1024px), desktop (≥1025px).
-
-**Deliverables**
-
-- React components (Tailwind) for Hero & Auth pages.
-- Fully clickable, animated CTAs & play icon.
-- Consistent typography, colors, spacing as specified.
+### Deliverables
+- React components (Tailwind CSS) for Hero & Auth.
+- Animated, clickable CTAs & play icon.
+- Consistent typography, spacing, and colors.
 
 ---
 
 ## 🛠️ Core Architecture
-
 - **Frontend:** React + TypeScript + Tailwind CSS + Vite  
-- **Backend:** Supabase (Database, Storage, Auth, RLS, Edge Functions)  
-- **AI Integration:** Gemini API for natural language chat  
+- **Backend:** Supabase (DB, Storage, Auth, RLS, Edge Functions)  
+- **AI Integration:** Gemini API for chat  
 
-### 🔐 Authentication & Authorization
-All tables and storage buckets use **Row-Level Security (RLS)**. Sensitive operations require **your credentials**.
+> **Note:** All sensitive operations require **your credentials**.
 
 ---
 
 ## 📋 Database Schema
+| Table                  | Purpose                                        | Access Scope  |
+|------------------------|------------------------------------------------|---------------|
+| `files`                | File metadata & extraction status              | User-scoped   |
+| `n8n_chat`             | Chat sessions linked to files                  | User-scoped   |
+| `n8n_chat_histories`   | Chat messages (user & assistant)               | User-scoped   |
+| `daily_message_limits` | Tracks daily messages (5/day)                  | User-scoped   |
+| `profiles`             | Extended user profiles                         | User-scoped   |
+| `vectors_data`         | Embeddings for future RAG                      | User-scoped   |
 
-| Table                  | Purpose                                        | Access Scope         |
-|------------------------|------------------------------------------------|----------------------|
-| `files`                | File metadata & extraction status              | User-scoped (RLS)    |
-| `n8n_chat`             | Chat session management linking to files       | User-scoped (RLS)    |
-| `n8n_chat_histories`   | All chat messages (user/assistant)             | User-scoped (RLS)    |
-| `daily_message_limits` | Tracks daily message count (5/day)             | User-scoped (RLS)    |
-| `profiles`             | Extended user info                             | User-scoped (RLS)    |
-| `vectors_data`         | Precomputed embeddings for future RAG          | User-scoped (RLS)    |
-
-### 🔧 Database Functions
-
-- `check_and_increment_message_count()` — rate limiting logic  
-- `get_daily_message_count()` — fetch current count  
-- `handle_new_user()` — auto-create profile on signup
+### Database Functions
+- `check_and_increment_message_count()` — rate limiting  
+- `get_daily_message_count()` — current count fetch  
+- `handle_new_user()` — signup hook
 
 ---
 
 ## ⚙️ Edge Functions
-
-1. **upload-file** — handle file uploads (`your credentials`)  
-2. **delete-file** — remove files (`your credentials`)  
-3. **extract-text** — extract text content from uploads (`your credentials`)  
-4. **chat-with-file** — route chat queries to Gemini API (`your credentials`)
+1. **upload-file** — upload handler (`your credentials`)  
+2. **delete-file** — deletion handler (`your credentials`)  
+3. **extract-text** — text extraction (`your credentials`)  
+4. **chat-with-file** — AI chat endpoint (`your credentials`)
 
 ---
 
 ## 🧩 React Components & Hooks
+**Components:**
+- `FileUploader` — drag & drop 📂
+- `FileList` — browse & delete 🗂️
+- `ChatInterface` — AI chat 💬
+- `AuthFlow` — Sign Up/Sign In 🔒
 
-**Core Components:**
-- `FileUploader` — drag & drop interface 📂
-- `FileList` — manage and delete files 🗂️
-- `ChatInterface` — interactive AI chat UI 💬
-- `AuthFlow` — unified Sign Up / Sign In tabs 🔒
+**Pages:** `Index`, `Auth`, `Dashboard`, `NotFound` 🚫
 
-**Pages:**
-- `Index` — main dashboard  
-- `Auth` — login/signup  
-- `Dashboard` — protected user area  
-- `NotFound` — 404 page 🚫
-
-**Custom Hooks:**
-- `useFileOperations` — upload/delete/rename files
-- `useFileChat` — send/receive chat messages
-- `useMessageLimit` — enforce daily limit
+**Hooks:**
+- `useFileOperations`  
+- `useFileChat`  
+- `useMessageLimit`
 
 ---
 
-## ✅ Key Features Implemented
+## ✅ Key Features
+- Supabase Auth 🔐  
+- File upload (50 MB limit) 📦  
+- Text extraction 📄  
+- AI chat via Gemini 🤖  
+- 5/day message limit ⏳  
+- Dark/light themes 🌗  
+- Real-time updates 🔄  
+- RLS security 👮
 
-- User authentication & Supabase Auth 🔐  
-- File upload & management with a 50 MB cap 📦  
-- Text extraction for supported file types 📄  
-- AI chat with file context via Gemini 🤖  
-- Daily message limit (5 messages/day) ⏳  
-- Responsive UI with dark/light themes 🌗  
-- Real-time file status updates 🔄  
-- RLS security on all data 👮
-
-
-## 🔄 Prepared for Future Enhancements
-
-- Vector embeddings system for semantic search 🔮  
-- Advanced file type support (PDF, DOCX) 📑  
-- Chat session history & management 🗃️
+## 🔄 Future Enhancements
+- Semantic search embeddings 🔮  
+- PDF/DOCX support 📑  
+- Chat session management 🗃️
 
 ---
 
-> **Note:** This repository contains only the project prompt. All code, assets, and configuration files are excluded.
+> **Only the prompt** resides here; code & assets excluded.
