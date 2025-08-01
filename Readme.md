@@ -5,7 +5,7 @@
 </p>
 <p align="center">
   <a href="https://filesgptaii.lovable.app/">
-    <img src="https://img.shields.io/badge/🔗-Live%20Demo-2D9CDB?style=for-the-badge&logo=webflow&logoColor=white" alt="Live Demo" />
+    <img src="https://img.shields.io/badge/🔗-Live%20Demo-2D9CDB?style=for-the-badge&l&" alt="Live Demo" />
   </a>
 </p>
 
