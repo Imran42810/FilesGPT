@@ -1,8 +1,11 @@
 # FilesGPT — AI File Chat Application Prompt 🚀
 
 <p align="center">
+  <img src="https://img.icons8.com/fluency/96/chat.png" alt="FilesGPT Logo" width="96" />
+</p>
+<p align="center">
   <a href="https://filesgptaii.lovable.app/">
-    <img src="" alt="Live Demo">
+    <img src="https://img.shields.io/badge/🔗-Live%20Demo-2D9CDB?style=for-the-badge&logo=webflow&logoColor=white" alt="Live Demo" />
   </a>
 </p>
 
