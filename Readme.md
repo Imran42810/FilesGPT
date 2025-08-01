@@ -1,7 +1,7 @@
 # FilesGPT — AI File Chat Application Prompt 🚀
 
 <div align="center">
-  <a href="https://filesgptaii.lovable.app/">🔗 **Project Playground**</a>
+  <a href="https://filesgptaii.lovable.app/">🔗 Live Project Link ▶️</a>
 </div>
 
 Welcome to **FilesGPT**, your all-in-one platform to upload, manage, and chat with your files using cutting-edge AI. Below is the comprehensive project prompt to scaffold and build the system—no code or assets included.
