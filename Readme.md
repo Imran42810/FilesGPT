@@ -1,8 +1,10 @@
 # FilesGPT — AI File Chat Application Prompt 🚀
 
-<div align="center">
-  <a href="https://filesgptaii.lovable.app/">🔗 Live Project Link ▶️</a>
-</div>
+<p align="center">
+  <a href="https://filesgptaii.lovable.app/">
+    <img src="https://img.shields.io/badge/🔗-Live%20Demo-2D9CDB?style=for-the-badge&logo=webflow&logoColor=white" alt="Live Demo">
+  </a>
+</p>
 
 Welcome to **FilesGPT**, your all-in-one platform to upload, manage, and chat with your files using cutting-edge AI. Below is the comprehensive project prompt to scaffold and build the system—no code or assets included.
 
@@ -15,7 +17,7 @@ Welcome to **FilesGPT**, your all-in-one platform to upload, manage, and chat wi
 
 ### Hero Section
 - **Layout & Branding**
-  - **Logo:** Top-left “FilesGPT” (clean, bold sans‑serif).  
+  - **Logo:** Top-left “FilesGPT” (clean, bold sans-serif).  
   - **Sign Up Button:** Top-right coral `#FF6F61` → navigates to Auth.
 - **Main Heading:**
   <h1 style="font-family:'Montserrat', sans-serif; font-weight:700; color:#333333; text-align:center;">
@@ -35,7 +37,7 @@ Welcome to **FilesGPT**, your all-in-one platform to upload, manage, and chat wi
   - Page background: `#F7F7F7`.  
   - Hero background: diagonal gradient (`#F7F7F7` → light coral).
 
-### Authentication Flow (Single‑Page, Tabbed)
+### Authentication Flow (Single-Page, Tabbed)
 - Centered card with tabs: **Sign Up** | **Sign In**.
 - **Fields:** Email (real-time validation), Password (strength meter on Sign Up).
 - **Actions:** Sign Up → coral `Create Account`; Sign In → coral `Continue`.
@@ -108,7 +110,7 @@ Welcome to **FilesGPT**, your all-in-one platform to upload, manage, and chat wi
 
 ## ✅ Key Features
 - Supabase Auth 🔐  
-- File upload (50 MB limit) 📦  
+- File upload (50 MB limit) 📦  
 - Text extraction 📄  
 - AI chat via Gemini 🤖  
 - 5/day message limit ⏳  
